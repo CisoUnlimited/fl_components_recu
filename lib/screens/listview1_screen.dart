@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Listview1Screen extends StatelessWidget {
   final options = const ['Targaryen', 'Stark', 'Lannister', 'Baratheon'];
 
-  const Listview1Screen({Key? key}) : super(key: key);
+  const Listview1Screen({super.key});
 
   @override
   Widget build(BuildContext context) {

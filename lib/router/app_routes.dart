@@ -4,6 +4,7 @@ import 'package:fl_components/screens/screens.dart';
 
 class AppRoutes {
   static const initialRoute = 'home';
+  
   static final menuOptions = <MenuOption>[
     MenuOption(
         route: 'home',
@@ -31,13 +32,15 @@ class AppRoutes {
         name: 'Tarjetas - Cards',
         screen: const CardScreen()),
   ];
-  static Map<String, Widget Function(BuildContext)> getAppRoutes(){
+
+  static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
     for (final option in menuOptions) {
       appRoutes.addAll({option.route: (BuildContext context) => option.screen});
     }
     return appRoutes;
   }
+
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     return MaterialPageRoute(builder: (context) => const AlertScreen());
   }
