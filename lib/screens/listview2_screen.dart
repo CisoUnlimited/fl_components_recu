@@ -1,3 +1,4 @@
+import 'package:fl_components/router/house_routes.dart';
 import 'package:flutter/material.dart';
 
 class Listview2Screen extends StatelessWidget {
@@ -14,16 +15,14 @@ class Listview2Screen extends StatelessWidget {
         body: ListView.separated(
           itemCount: options.length,
           itemBuilder: (context, index) => ListTile(
-            trailing: const Icon(
-              Icons.arrow_forward_ios_outlined),
+            trailing: const Icon(Icons.arrow_forward_ios_outlined),
             title: Text(options[index]),
             onTap: () {
-              final casa = options[index];
-              print(casa);
+              Navigator.pushNamed(
+                  context, HouseRoutes.houseOptions[index].route);
             },
           ),
-          separatorBuilder: (context, index) => 
-            const Divider(),
+          separatorBuilder: (context, index) => const Divider(),
         ));
   }
 }

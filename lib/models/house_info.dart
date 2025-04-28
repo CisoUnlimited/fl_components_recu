@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class HouseInfo {
+  final String route;
   final String name;
   final Image logo;
-  final String description;
-  final String color;
+  final Widget screen;
 
   HouseInfo(
-      {required this.name,
+      {required this.route,
+      required this.name,
       required this.logo,
-      required this.description,
-      required this.color});
+      required this.screen});
 }

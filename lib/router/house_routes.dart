@@ -2,39 +2,35 @@ import 'package:fl_components/models/models.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_components/screens/screens.dart';
 
-class AppRoutes {
+class HouseRoutes {
   static final houseOptions = <HouseInfo>[
     HouseInfo(
-      name: 'Targaryen',
-      logo: Image.asset('assets/images/targaryen.png'),
-      description: 'Fire and blood',
-      color: 'black',
-    ),
+        route: 'Targaryen',
+        logo: Image.asset('assets/images/targaryen.png'),
+        name: 'Targaryen',
+        screen: const TargaryenScreen()),
     HouseInfo(
-      name: 'Stark',
-      logo: Image.asset('assets/images/stark.png'),
-      description: 'Winter is coming',
-      color: 'white',
-    ),
+        route: 'Stark',
+        logo: Image.asset('assets/images/stark.png'),
+        name: 'Stark',
+        screen: const StarkScreen()),
     HouseInfo(
-      name: 'Lannister',
-      logo: Image.asset('assets/images/lannister.png'),
-      description: 'Hear me roar!',
-      color: 'red',
-    ),
+        route: 'Lannister',
+        logo: Image.asset('assets/images/lannister.png'),
+        name: 'Lannister',
+        screen: const LannisterScreen()),
     HouseInfo(
-      name: 'Baratheon',
-      logo: Image.asset('assets/images/baratheon.png'),
-      description: 'Ours is the fury',
-      color: 'yellow',
-    ),
+        route: 'Baratheon',
+        logo: Image.asset('assets/images/baratheon.png'),
+        name: 'Baratheon',
+        screen: const BaratheonScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getHouseRoutes() {
     Map<String, Widget Function(BuildContext)> houseRoutes = {};
     for (final option in houseOptions) {
       houseRoutes
-          .addAll({option.name: (BuildContext context) => HouseScreen(houseInfo: option)});
+          .addAll({option.route: (BuildContext context) => option.screen});
     }
     return houseRoutes;
   }
