@@ -14,6 +14,9 @@ class BaratheonScreen extends StatelessWidget {
         body: Column(
           children: [
             Image.asset('assets/images/baratheon.png'),
+            const SizedBox(
+              height: 20,
+            ),
             const Text('Ours is the fury'),
           ],
         ));
